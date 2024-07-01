@@ -1,0 +1,92 @@
+<html>
+<head>
+    <style>
+        .afsvgpie .marker{
+            position: absolute;
+            visibility: hidden;
+        }
+        .afsvgpie .marker.active{
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+
+<div id="gencal" style="width: 100%; max-width:400px; margin: 0 auto; position:relative;"></div>
+
+<script type="text/javascript" src="afpichart.min.js"></script>
+<script type="text/javascript">
+    var afconfig;
+
+    var data = [
+        [
+            "Refrigerator",
+            500,
+            "069F27",
+            "Sector 1"
+        ],
+        [
+            "Incandescent Lights",
+            1200,
+            "069F27",
+            "Sector 2"
+        ]
+    ];
+
+    var data2 = [
+        [
+            "Refrigerator",
+            800,
+            "069F27",
+            "Sector 3"
+        ],
+        [
+            "Incandescent Lights",
+            2000,
+            "069F27",
+            "Sector 4"
+        ]
+    ];
+
+    var options = {
+        phase: '.phase-1',
+        mode: 'pumpstart',
+        distance: 0,
+        vheight: 0,
+        suction: 0,
+        title: 'Watts in use: ',
+        strokeSize: 8,
+        canvas:'generators',
+        canvasClass: 'afsvgpie',
+        circleStrokeSize: 1,
+        strokeColor: "ffffff",
+        circleFillColor: "ffffff",
+        circleRadius: .56,
+        mainCircleRadius:.56,
+        total: 8000,
+        svgBackgroundColor: "D3D3D3",
+        secondCircle: true,
+        svgSecondCircleBackgroundColor: "D3D3D3",
+        svgSecondCircleStrokeSize: 1,
+        svgSecondCircleFillColor: 1,
+        svgSecondStrokeColor: 1,
+        svgSecondCirclecircleRadius: .88,
+        // show caption in the middle
+        textCaptions: [
+            {title:'Watts in use:',fontfamily:"Arial, Helvetica, sans-serif",x:'50%',y:'40%',postfix:'Watts'},
+            {title:'2010',fontfamily:"Arial, Helvetica, sans-serif",x:'50%',y:'60%',postfix:'Watts',classes:'successclass'},
+        ],
+        mageGoColor: '069F27',
+        mageStopColor: 'D0202B',
+        productMaxOutput: 0,
+        totalWattsRequired: 0,
+        totalStartUpWattsRequired:0,
+        firstcircleClass: 'circle-1',
+        secondCircleClass: 'circle-2',
+    };
+
+    afDrawPichart(options, data, data2)
+</script>
+
+</body>
+</html>
